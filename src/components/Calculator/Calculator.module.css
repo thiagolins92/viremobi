@@ -323,12 +323,135 @@
   position: relative;
 }
 
-@media (max-width: 479px) {
+/* =========================================
+   Mobile — single column calculator
+   ========================================= */
+@media (max-width: 767px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .controls {
+    gap: 1rem;
+  }
+
+  .sliderLabel {
+    font-size: 0.9rem;
+  }
+
+  .sliderValue {
+    font-size: 1.4rem;
+  }
+
+  /* Slider thumb: bigger for touch */
+  .slider::-webkit-slider-thumb {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sliderMinMax {
+    font-size: 0.7rem;
+  }
+
+  /* Comparison table: compact */
+  .comparison {
+    padding: 0.75rem;
+  }
+
+  .compRow {
+    font-size: 0.8rem;
+    padding: 0.35rem 0;
+  }
+
+  .compRowHighlight {
+    font-size: 0.9rem;
+  }
+
+  .compExtra {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  /* Result card: compact */
+  .result {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .resultLabel {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  .resultGross {
+    font-size: 1.6rem;
+  }
+
+  .resultPeriod {
+    font-size: 0.9rem;
+  }
+
+  .resultRent {
+    font-size: 0.85rem;
+  }
+
+  .resultRentNote {
+    font-size: 0.75rem;
+  }
+
   .resultNet {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+
+  .resultNetLabel {
+    font-size: 0.85rem;
+  }
+
+  .resultNote {
+    font-size: 0.75rem;
+  }
+
+  .cta {
+    margin-top: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 374px) {
+  .resultNet {
+    font-size: 1.8rem;
   }
   .resultGross {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 }
 

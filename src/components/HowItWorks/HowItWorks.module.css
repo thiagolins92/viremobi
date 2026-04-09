@@ -228,6 +228,84 @@
 }
 
 /* ============================================================
+   MOBILE — clean timeline, compact cards
+   ============================================================ */
+@media (max-width: 767px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .timeline {
+    gap: 1rem;
+  }
+
+  .timelineLine {
+    left: 16px;
+  }
+
+  .timelineNode {
+    width: 32px;
+    height: 32px;
+    box-shadow: 0 0 0 3px var(--color-bg-light), 0 0 12px rgba(27, 158, 75, 0.2);
+  }
+
+  .nodeNumber {
+    font-size: 0.7rem;
+  }
+
+  .nodePulse {
+    display: none;
+  }
+
+  .step {
+    padding-left: 44px;
+    gap: 0;
+  }
+
+  .cardImage {
+    height: 120px;
+  }
+
+  .cardBody {
+    padding: 0.75rem;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cardDescription {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .card {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* ============================================================
    DESKTOP (768px+) — alternating sides
    ============================================================ */
 @media (min-width: 768px) {

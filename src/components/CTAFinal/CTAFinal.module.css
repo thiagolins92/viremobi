@@ -190,3 +190,38 @@
   color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+    min-height: 360px;
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .phoneDisplay {
+    font-size: var(--font-size-base);
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  .ctaButton {
+    font-size: var(--font-size-base);
+    padding: 0.9rem 1.8rem;
+  }
+
+  .urgency {
+    font-size: var(--font-size-xs);
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  .container {
+    gap: var(--space-md);
+  }
+}

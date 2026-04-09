@@ -1,7 +1,7 @@
 .footer {
   background: var(--color-bg-dark);
   border-top: 1px solid var(--color-border-dark);
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-lg) var(--space-md);
 }
 
 .container {
@@ -71,4 +71,29 @@
   outline: 2px solid var(--color-whatsapp);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
+}
+
+/* =========================================
+   Mobile — compact centered footer
+   ========================================= */
+@media (max-width: 767px) {
+  .footer {
+    padding: 1rem 1rem 3.5rem;
+  }
+
+  .container {
+    gap: 0.5rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+
+  .whatsappLink {
+    font-size: 0.75rem;
+  }
 }

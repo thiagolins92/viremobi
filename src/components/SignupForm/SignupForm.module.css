@@ -342,13 +342,109 @@
   line-height: 1.5;
 }
 
-@media (max-width: 479px) {
+/* =========================================
+   Mobile — full-width form, touch-friendly
+   ========================================= */
+@media (max-width: 767px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
   .card {
-    padding: var(--space-lg);
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .form {
+    gap: 0.875rem;
+  }
+
+  /* Force single column on mobile */
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .label svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .input,
+  .select {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    height: 44px;
+    border-radius: var(--radius-sm);
+  }
+
+  .errorMessage {
+    font-size: 0.7rem;
   }
 
   .submitButton {
-    padding: 16px 24px;
-    font-size: var(--font-size-base);
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 48px;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    margin-top: 0.25rem;
+  }
+
+  .note {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .note svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Success state */
+  .successOverlay {
+    padding: 2rem 1rem;
+  }
+
+  .successIcon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
+  }
+
+  .successTitle {
+    font-size: 1.1rem;
+  }
+
+  .successText {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .card {
+    padding: 1rem;
   }
 }

@@ -119,9 +119,57 @@
 }
 
 /* =========================================
+   Mobile — 3 stats in a ROW, compact
+   ========================================= */
+@media (max-width: 767px) {
+  .statsBar {
+    padding: 1.25rem 0;
+  }
+
+  .inner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .statIcon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.25rem;
+  }
+
+  .statIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .stat {
+    gap: 0.2rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+  }
+
+  .statSuffix {
+    font-size: 0.9rem;
+  }
+
+  .statLabel {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* =========================================
    Desktop
    ========================================= */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
+  .statsBar {
+    padding: var(--space-section) 0;
+  }
+
   .inner {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
@@ -134,11 +182,5 @@
 
   .statSuffix {
     font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .statsBar {
-    padding: var(--space-section) 0;
   }
 }

@@ -406,14 +406,135 @@
 }
 
 /* =========================================
-   Mobile optimizations
+   Mobile — redesigned from scratch
    ========================================= */
 @media (max-width: 767px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 72px;
+    padding-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  .inner {
+    padding: 0 1rem;
+  }
+
+  .textCol {
+    gap: 0.75rem;
+  }
+
+  /* Vagas: compact inline */
+  .vagasCounter {
+    gap: 0.5rem;
+  }
+
   .vagasNumber {
-    font-size: 3.5rem;
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+
+  .vagasLabel {
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+  }
+
+  .vagasPulse {
+    display: none;
+  }
+
+  /* Title: impactful but fits */
+  .title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  /* Subtitle: readable, max 3 lines */
+  .subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  /* CTAs: stacked, full-width */
+  .ctaGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .ctaPrimary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+    height: 48px;
+  }
+
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    border-width: 1px;
+  }
+
+  .ctaArrow {
+    font-size: 1.1em;
+  }
+
+  /* Location: subtle */
+  .locationBar {
+    font-size: 0.7rem;
+    gap: 0.35rem;
+    opacity: 0.8;
+  }
+
+  .locationBar svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .scrollHint {
+    display: none;
+  }
+
+  /* Overlay: vertical gradient for mobile readability */
+  .bgOverlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(13, 27, 42, 0.92) 0%,
+        rgba(13, 27, 42, 0.85) 35%,
+        rgba(13, 27, 42, 0.65) 65%,
+        rgba(13, 27, 42, 0.80) 100%
+      );
+  }
+
+  .bgImage {
+    object-position: 60% center;
   }
 
   @keyframes heroPan {
     0%, 100% { transform: scale(1.04); }
+  }
+}
+
+/* Very small screens */
+@media (max-width: 374px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .vagasNumber {
+    font-size: 1.75rem;
+  }
+
+  .ctaPrimary {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.2rem;
   }
 }

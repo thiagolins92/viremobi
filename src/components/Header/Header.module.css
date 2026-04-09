@@ -285,6 +285,67 @@
 /* =========================================
    Breakpoint: desktop 768px+
    ========================================= */
+/* =========================================
+   Mobile — compact 56px header
+   ========================================= */
+@media (max-width: 767px) {
+  .header {
+    height: 56px;
+  }
+
+  .inner {
+    padding: 0 0.75rem;
+  }
+
+  .logoIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logoIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .logoText {
+    font-size: 0.95rem;
+  }
+
+  .logoSub {
+    display: none;
+  }
+
+  .ctaMobile {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    height: 32px;
+    border-radius: var(--radius-full);
+  }
+
+  .menuToggle {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .mobileActions {
+    gap: 0.5rem;
+  }
+
+  .mobileMenu {
+    top: 56px;
+  }
+
+  .mobileNavLink {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .mobileNavList {
+    padding: 0.5rem 0 0.75rem;
+  }
+}
+
 @media (min-width: 768px) {
   .inner {
     padding: 0 var(--space-2xl);

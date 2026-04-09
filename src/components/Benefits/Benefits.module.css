@@ -271,6 +271,104 @@
 }
 
 /* ============================================================
+   MOBILE — single column, simple clean cards
+   ============================================================ */
+@media (max-width: 767px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .iconWrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cardDescription {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* Images in cards: smaller on mobile */
+  .cardImageWrapper {
+    height: 120px;
+  }
+
+  .cardWithImage .cardImageWrapper {
+    height: 100px;
+  }
+
+  /* Featured card: same sizing as others on mobile */
+  .cardFeatured .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardFeatured .iconWrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cardFeatured .cardImageWrapper {
+    height: 140px;
+  }
+
+  .ctaButton {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ctaNote {
+    font-size: 0.7rem;
+  }
+}
+
+/* ============================================================
    DESKTOP — Real Bento Grid Layout
    ============================================================ */
 @media (min-width: 768px) {

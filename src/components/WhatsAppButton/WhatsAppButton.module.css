@@ -13,7 +13,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 56px;
+  height: 48px;
   z-index: 99;
   background: var(--color-whatsapp);
   color: #fff;
@@ -35,6 +35,14 @@
 .wrapper.visible .mobileBar {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .mobileBar {
+    height: 48px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
 }
 
 /* Esconde a barra mobile em desktop */

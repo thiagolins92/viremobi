@@ -62,6 +62,21 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: calc(var(--header-height) + var(--space-lg));
 }
 
+/* Mobile: compensate for fixed header + WhatsApp bar */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 60px;
+  }
+
+  [id] {
+    scroll-margin-top: 76px;
+  }
+
+  body {
+    padding-bottom: 52px;
+  }
+}
+
 /* Selection */
 ::selection {
   background: var(--color-primary);

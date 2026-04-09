@@ -81,6 +81,34 @@
   animation-play-state: paused;
 }
 
+/* Mobile — compact ticker */
+@media (max-width: 767px) {
+  .marquee {
+    padding: 6px 0;
+  }
+
+  .item {
+    font-size: 0.65rem;
+    gap: 0.35rem;
+    letter-spacing: 0.04em;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .track {
+    gap: 0.75rem;
+    animation-duration: 25s;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    width: 24px;
+  }
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   .track {
