@@ -1,0 +1,105 @@
+/* ── Wrapper ──────────────────────────────── */
+.wrapper {
+  pointer-events: none;
+}
+
+.wrapper.visible {
+  pointer-events: auto;
+}
+
+/* ── Mobile: barra full-width no bottom ────── */
+.mobileBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  z-index: 99;
+  background: var(--color-whatsapp);
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  /* Oculto por padrao */
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s var(--ease-out-expo), opacity 0.3s ease;
+  /* Glow top edge */
+  box-shadow: 0 -4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.wrapper.visible .mobileBar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Esconde a barra mobile em desktop */
+@media (min-width: 768px) {
+  .mobileBar {
+    display: none;
+  }
+}
+
+/* ── Desktop: FAB circular — enhanced ────── */
+.desktopFab {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopFab {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-whatsapp);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 99;
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(37, 211, 102, 0.3);
+    /* Oculto por padrao */
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+    transition:
+      opacity 0.4s var(--ease-out-expo),
+      transform 0.4s var(--ease-out-back),
+      box-shadow 0.3s ease;
+    animation: none;
+  }
+
+  .wrapper.visible .desktopFab {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    animation: fabPulse 2.5s ease-in-out infinite;
+  }
+
+  .desktopFab:hover,
+  .desktopFab:focus-visible {
+    transform: scale(1.12) !important;
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0.15), 0 0 30px rgba(37, 211, 102, 0.4), var(--shadow-lg);
+    animation: none !important;
+  }
+
+  .desktopFab:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+}
+
+/* ── Pulse — enhanced with ring ──────────── */
+@keyframes fabPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(37, 211, 102, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0.12), 0 0 30px rgba(37, 211, 102, 0.35), var(--shadow-lg);
+  }
+}

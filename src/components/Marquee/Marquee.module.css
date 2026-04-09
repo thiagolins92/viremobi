@@ -1,0 +1,89 @@
+/* =========================================
+   Marquee — infinite horizontal ticker
+   Inspired by 21st.dev marquee patterns
+   ========================================= */
+
+.marquee {
+  background: var(--color-bg-dark);
+  border-top: 1px solid rgba(27, 158, 75, 0.15);
+  border-bottom: 1px solid rgba(27, 158, 75, 0.15);
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-md) 0;
+  /* Noise texture overlay */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Fade edges */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-bg-dark), transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-bg-dark), transparent);
+}
+
+.track {
+  display: flex;
+  gap: var(--space-xl);
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+  will-change: transform;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 8px rgba(27, 158, 75, 0.5);
+  flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover for readability */
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

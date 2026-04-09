@@ -1,0 +1,144 @@
+/* =========================================
+   StatsBar — RADICAL: huge numbers,
+   skyline bg, icon badges, dramatic entrance
+   ========================================= */
+
+.statsBar {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+}
+
+/* Skyline background */
+.skyline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0.15;
+  filter: hue-rotate(-10deg);
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 27, 42, 0.6) 0%,
+    rgba(13, 27, 42, 0.3) 50%,
+    rgba(13, 27, 42, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+/* Inner */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+}
+
+/* Stat item */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition:
+    opacity 0.7s var(--ease-out-expo) var(--delay, 0ms),
+    transform 0.7s var(--ease-out-expo) var(--delay, 0ms);
+}
+
+.statVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Icon badge */
+.statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(27, 158, 75, 0.15);
+  color: var(--color-primary);
+  border: 1px solid rgba(27, 158, 75, 0.25);
+  margin-bottom: var(--space-sm);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+
+.stat:hover .statIcon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 30px rgba(27, 158, 75, 0.4);
+}
+
+/* Number — ENORMOUS */
+.statNumber {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+}
+
+.statValue {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--color-text-white);
+  letter-spacing: -2px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.statSuffix {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   Desktop
+   ========================================= */
+@media (min-width: 600px) {
+  .inner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    padding: 0 var(--space-2xl);
+  }
+
+  .statValue {
+    font-size: 4.5rem;
+  }
+
+  .statSuffix {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .statsBar {
+    padding: var(--space-section) 0;
+  }
+}

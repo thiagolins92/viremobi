@@ -1,0 +1,153 @@
+@import './tokens.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+@import '@fontsource/inter/900.css';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Scroll offset for anchor links */
+[id] {
+  scroll-margin-top: calc(var(--header-height) + var(--space-lg));
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+}
+
+/* Animate on scroll base */
+.animate-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-2xl);
+  }
+}
+
+/* =========================================
+   Reduced motion — accessibility first
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================
+   Global button microinteractions
+   ========================================= */
+a[class*="cta"],
+button[class*="cta"],
+a[class*="Cta"],
+button[class*="Cta"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ripple effect on click for all CTAs */
+a[class*="cta"]::after,
+a[class*="Cta"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%), rgba(255,255,255,0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+a[class*="cta"]:active::after,
+a[class*="Cta"]:active::after {
+  opacity: 1;
+  transition: opacity 0s;
+}
+
+/* =========================================
+   Section divider — road/estrada effect
+   ========================================= */
+.section-road-divider {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-primary) 0px,
+    var(--color-primary) 24px,
+    transparent 24px,
+    transparent 36px
+  );
+  opacity: 0.3;
+}
